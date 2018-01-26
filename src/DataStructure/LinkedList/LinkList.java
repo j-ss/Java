@@ -1,5 +1,5 @@
 package DataStructure.LinkedList;
-/*hacked by ALok*/
+/*akki007*/
 public class LinkList {
 
     Node head=null;
