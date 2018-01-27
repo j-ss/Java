@@ -1,9 +1,5 @@
 package DataStructure.LinkedList;
-<<<<<<< HEAD
 
-=======
-/*hacked by ALok*/
->>>>>>> 48a8c8a5a8370be63d372d7537690ba833278ab7
 public class LinkList {
 
     Node head=null;
