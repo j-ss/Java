@@ -34,7 +34,11 @@ public class CircularTest {
         circularOperation.traverse();
 
         //is circular
-        circularOperation.checkCircular();
+        boolean ans=circularOperation.isLoop();
+        System.out.print(ans);
+
+
+
     }
 
 }

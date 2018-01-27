@@ -11,45 +11,74 @@ public class Test {
             linkList.insertEnd(i);
         }
 
-        //insert at front
+//        //insert at front
+//
+//        linkList.insertFront(10);
+//        linkList.insertFront(11);
+//
+//       //insert at position
+//
+//        linkList.insertAtPosition(15,6);
+//        linkList.insertAtPosition(16,9);
+//
+//        //traverse
+//
+//        linkList.traverse(" linked list ");
+//
+//        //delete at front
+//
+//        linkList.deleteAtBegining();
+//        linkList.deleteAtBegining();
+//
+//        //traverse
+//
+//        linkList.traverse(" linked list ");
+//
+//        //delete At last
+//
+//        linkList.deleteAtLast();
+//        linkList.deleteAtLast();
+//
+//        //traverse
+//
+//        linkList.traverse(" linked list ");
+//
+//        //delete At Position
+//
+//        linkList.deleteAtPosition(5);
+//        linkList.deleteAtPosition(6);
+//
+//        //traverse
+//
+//        linkList.traverse(" linked list ");
 
-        linkList.insertFront(10);
-        linkList.insertFront(11);
+          // find node from last
 
-       //insert at position
+//        linkList.findNodeWithRecursion(linkList.head,6);
+//        linkList.findNodeFromEnd(6);
 
-        linkList.insertAtPosition(15,6);
-        linkList.insertAtPosition(16,9);
+        // create a linked list with loop
+
+//        Node node=linkList.createLoopList();
+
+//        // is loop present or not
+//
+//        boolean isLoop=linkList.isLoop(node);
+//        System.out.print(isLoop);
+
+
+        // traverse
+
+        linkList.traverse("Linked list before traversal");
+
+        //  reverse list
+
+        linkList.reverse();
 
         //traverse
 
-        linkList.traverse();
+        linkList.traverse("Linked list after traversal");
 
-        //delete at front
 
-        linkList.deleteAtBegining();
-        linkList.deleteAtBegining();
-
-        //traverse
-
-        linkList.traverse();
-
-        //delete At last
-
-        linkList.deleteAtLast();
-        linkList.deleteAtLast();
-
-        //traverse
-
-        linkList.traverse();
-
-        //delete At Position
-
-        linkList.deleteAtPosition(5);
-        linkList.deleteAtPosition(6);
-
-        //traverse
-
-        linkList.traverse();
     }
 }

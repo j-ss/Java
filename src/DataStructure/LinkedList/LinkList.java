@@ -1,9 +1,5 @@
 package DataStructure.LinkedList;
-<<<<<<< HEAD
 
-=======
-/*hacked by ALok*/
->>>>>>> 48a8c8a5a8370be63d372d7537690ba833278ab7
 public class LinkList {
 
     Node head=null;
@@ -30,8 +26,9 @@ public class LinkList {
 
     //Traverse a linked list
 
-    public void traverse()
+    public void traverse(String str)
     {
+        System.out.print(str+" : ");
         Node temp=head;
         if(temp==null)
         {
@@ -144,4 +141,122 @@ public class LinkList {
             temp.setNext(temp.getNext().getNext());
         }
     }
+
+    //find node from end of linked list
+
+    public void findNodeFromEnd(int position)
+    {
+        Node firstNode=head;
+        Node secondNode=head;
+        int count=0;
+        while (firstNode!=null)
+        {
+            if(count>=position)
+            {
+                secondNode=secondNode.getNext();
+            }
+            count++;
+            firstNode=firstNode.getNext();
+        }
+
+        System.out.println(position+"th node from end is "+secondNode.getData());
+    }
+
+    // by using recursion
+    int count=0;
+    public void findNodeWithRecursion(Node node,int position)
+    {
+
+        if(node==null)
+        {
+            return;
+        }
+        findNodeWithRecursion(node.getNext(),position);
+        count++;
+        if(count==position)
+        {
+            System.out.println(position+"th node from end is "+node.getData());
+        }
+    }
+
+    //find a list is cyclic or not
+
+    public boolean isLoop(Node head)
+    {
+        Node fPtr=head;
+        Node sPtr=head;
+
+        while (fPtr!=null)
+        {
+            fPtr=fPtr.getNext().getNext();
+            sPtr=sPtr.getNext();
+
+            if(sPtr==fPtr)
+            return true;
+        }
+        return false;
+
+    }
+
+    /**
+     *  *********************create a cyclic list*************************
+     */
+
+
+    public Node createLoopList()
+    {   int count=0;
+        Node head=null;
+        Node start=null;
+        Node temp=null;
+        for(int i=0;i<10;i++)
+        {
+            Node node=new Node(i);
+            if(head==null)
+            {
+                head=node;
+                temp=head;
+                count++;
+            }
+            else
+            {
+
+                count++;
+                while (temp.getNext()!=null)
+                {
+                    temp=temp.getNext();
+                }
+                temp.setNext(node);
+                if (count==6)
+                    start=temp;
+            }
+        }
+        temp.getNext().setNext(start);
+        return head;
+    }
+
+    /**
+     * *************reverse a linked list*********************
+     */
+
+    public void reverse()
+    {
+        Node current=head;
+        Node next=null;
+        Node prev=null;
+
+        while(current!=null)
+        {
+            next=current.getNext();
+            current.setNext(prev);
+            prev=current;
+            current=next;
+        }
+
+        head=prev;
+
+    }
+
+    /**
+     * **********************insert node into sorted  list********************
+     */
 }

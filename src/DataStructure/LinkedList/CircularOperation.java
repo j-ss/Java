@@ -82,15 +82,25 @@ public class CircularOperation {
      System.out.println();
     }
 
-    //check is circular
+    //find a list is cyclic or not
 
-    public void checkCircular()
+    public boolean isLoop()
     {
-        CircularList temp=head;
-        while(temp.getNext()!=null)
+        CircularList fPtr=head;
+        CircularList sPtr=head;
+
+        while (fPtr!=null)
         {
-            System.out.print(temp.getData()+"-->");
-            temp=temp.getNext();
+            fPtr=fPtr.getNext().getNext();
+            sPtr=sPtr.getNext();
+
+            if(sPtr==fPtr)
+                return true;
         }
+        return false;
+
     }
+
+
+
 }

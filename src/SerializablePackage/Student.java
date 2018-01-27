@@ -1,6 +1,5 @@
 package SerializablePackage;
 
-<<<<<<< HEAD
 import java.io.Serializable;
 
 public class Student implements Serializable{
@@ -42,9 +41,3 @@ private long number;
         this.number = number;
     }
 }
-
-
-=======
-public class Student {
-}
->>>>>>> 48a8c8a5a8370be63d372d7537690ba833278ab7
