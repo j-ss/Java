@@ -1,5 +1,7 @@
 package DataStructure.LinkedList;
 
+import java.util.*;
+
 public class LinkList {
 
     Node head=null;
@@ -259,4 +261,186 @@ public class LinkList {
     /**
      * **********************insert node into sorted  list********************
      */
+
+    public void insertNode(Node node)
+    {
+
+    }
+
+    /**
+     * ************************sorting a linked list****************************
+     */
+
+    public void sortList()
+    {
+        HashMap<Node,Integer> hashMap=new HashMap<Node, Integer>();
+        Node temp=head;
+        Node prev=null;
+        while(temp!=null)
+        {
+            hashMap.put(temp,temp.getData());
+            prev=temp;
+            temp=temp.getNext();
+            prev.setNext(null);
+
+        }
+        Set<Node> set=hashMap.keySet();
+        for(Node n:set)
+        {
+            System.out.println(n+"  "+n.getData()+" ");
+        }
+        temp=null;
+        prev=null;
+        ArrayList<Node> arrayList=new ArrayList<>(set.size());
+        for(Node n:set)
+        {
+            arrayList.add(n);
+        }
+        for(int i=0;i<arrayList.size();i++)
+        {
+            if(temp==null)
+            {
+                temp=arrayList.get(i);
+            }
+            else
+            {
+                temp.setNext(arrayList.get(i));
+            }
+
+        }
+
+        while(temp!=null)
+        {
+            System.out.print(temp.getData()+" ");
+            temp=temp.getNext();
+        }
+    }
+
+    /**
+     * **********traverse list recursively ********************************
+     */
+
+
+        public void traverseRecurse(Node node)
+        {
+            if(node==null)
+            {
+                return;
+            }
+            traverseRecurse(node.getNext());
+            System.out.print(node.getData());
+        }
+
+    /**
+     * ***************check even or odd*************************
+     */
+
+    public void checkList()
+    {
+        Node temp=head;
+
+        while(temp.getNext()!=null)
+        {
+            temp=temp.getNext().getNext();
+
+            if(temp==null)
+            {
+                System.out.println(" even ");
+                 return;
+            }
+        }
+        System.out.println(" odd ");
+        return;
+    }
+
+    /**
+     * *******************merge two sorted array***********************
+     */
+
+    public void merge(Node head1,Node head2)
+    {
+        Node first=head1;
+        Node seccond=head2;
+        Node third=null;
+        while(first!=null&&seccond!=null)
+        {
+            if(first.getData()>seccond.getData())
+            {
+                if(third==null)
+                    third=seccond;
+                else
+                {
+                    third.setNext(seccond);
+                    seccond=seccond.getNext();
+                }
+            }
+            if(first.getData()<seccond.getData())
+            {
+                if(third==null)
+                    third=first;
+                else
+                {
+                    third.setNext(first);
+                    first=first.getNext();
+                }
+            }
+            if(first.getData()==seccond.getData())
+            {
+                if(third==null) {
+                    third = seccond;
+                    third.setNext(first);
+
+
+                }
+                else
+                {
+                    third.setNext(first);
+                    third.setNext(seccond);
+                }
+                first=first.getNext();
+                seccond=seccond.getNext();
+            }
+        }
+        if(first==null)
+            third.setNext(seccond);
+        if(seccond==null)
+            third.setNext(first);
+    }
+
+    /**
+     * ********************** reverse list into group****************************
+     */
+
+    public void reverseInGroup(int size)
+    {
+        Node current=head;
+        Node prev=null;
+        Node next=null;
+        Node pre=null;
+        Node node=head;
+        int count=1;
+        while(current!=null)
+        {
+            if(count==size)
+            {
+                next=current.getNext();
+                current.setNext(prev);
+                prev=node;
+                node=next;
+                current=next;
+             count=1;
+            }
+            pre=current;
+            current=current.getNext();
+            count++;
+
+        }
+        if(count!=size)
+        {
+            next.setNext(prev);
+            prev=next;
+        }
+        head=prev;
+    }
 }
+

@@ -1,5 +1,7 @@
 package DataStructure.LinkedList;
 
+import java.util.Comparator;
+
 public class Node {
 
     private int data;
@@ -24,4 +26,7 @@ public class Node {
     public void setNext(Node next) {
         this.next = next;
     }
+
 }
+
+
