@@ -113,3 +113,23 @@ i++;//error in lambada
 
 
    lambada is step toward functional programming
+
+
+   -----------------------------------------------------------------------
+
+             //write a function as lambada
+           // return type of lambada is functional interface
+
+          Function<String,String> lambadaResult=(source)->{
+
+               return "string";
+           };
+
+           call this function
+
+           String result=lambadaResult.apply("jogendra singh");
+
+--     --    --  ------------------------------------------------------------
+
+lambada is used for functional interface functional interface has only
+one abstract method eg. runnable callable comparator comparable etc.
