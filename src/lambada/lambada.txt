@@ -1,0 +1,115 @@
+new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("runnsble");
+            }
+        }).start();
+
+        //this is ex of anonymous class
+
+-----------------------------------------------------------------
+        //lambada contains three token
+        //1--argument list
+        //2--  '->'
+        //3--body of function
+
+        //lambada ex is used with functional interface which has only one function to implememt
+
+    //cant include return statement if only one statement is present in lambada
+-----------------------------------------------------------------------
+        new Thread(()->System.out.println("lambada ex")).start();
+
+        //if we have multiple state ment then we use this
+
+        new Thread(()->{
+            System.out.println("first");
+            System.out.println("second");
+        }).start();
+
+----------------------------------------------------------------------------
+prove anonymous class dont hava a name
+
+eg
+
+    interface Upper
+    {
+    public void jogi();
+    }
+    class class
+    {
+    public void hello()
+    {
+    System.out.println(getClass().getName());
+
+    return new Upper()
+    {
+    @Override
+    public void jogi()
+    {
+    System.out.println(getClass().getName());
+    }
+    }
+    }
+
+ --------------------------------------------------------------------------------------
+    ********************************************************************************8
+    //lambada expression class implement an interface and override its method
+int i=0;
+i++;//error in lambada
+
+            UpperConcat us=(s1,s2)->{
+            sout(i);//right
+                return s1.toUpperCase()+s2.toUpperCase();
+            };
+
+    //anonymous class provide implementation of interface
+
+            new UpperConcat(){
+            @Override
+            public String upperConcat(String s1,String s2)
+            {
+            return s1.toUpperCase()+s2.toUpperCase();
+            }
+            }
+
+
+   -----------------------------------------------------------------------------------
+
+
+   if we use a local variable inside an anonymous class it compile time error other
+   wise declare it as final;
+
+   in lambada we use local variable inside it but if we change the value then its error
+
+   see upper
+
+
+
+   local variable refrenced from lambada must be final or effectively final
+
+
+   if we hace one argumant then we pass it as
+   argument->{
+               sout(argument);
+               };
+   or
+   (argument)->{
+                sout(argument);
+                };
+
+
+                ****There is one another method to iterate collection that is forEach()
+                it iterate who implement iterator interface.
+
+
+                forEach(Consumer<? extends T>action)
+
+
+                here Consumer is a functional interface which has one method accept which
+                take one argument and perform action on it and return void.
+
+                arrayList.forEach(object->{//perform action on object};)
+
+
+
+   lambada is step toward functional programming
